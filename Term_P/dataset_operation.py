@@ -31,7 +31,7 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_CHECKPOINT)
 def preprocess_function(examples):
     inputs = []
     targets = []
-    
+
     # [수정 1] 데이터셋이 {'translation': {'ko': '...', 'en': '...'}} 구조일 경우 처리
     if "translation" in examples:
         inputs = [ex['ko'] for ex in examples["translation"]]
